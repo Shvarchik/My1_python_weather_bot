@@ -1,0 +1,12 @@
+﻿import requests
+
+def import_xml ():
+    file_url = 'https://xml.meteoservice.ru/export/gismeteo/point/32277.xml'
+
+    weather_xml = requests.get(file_url)
+    return weather_xml.content
+
+    # чтобы создать файл и записать туда содержимое: 
+    # with open ('имя файла.xml', 'wb') as <имя файловой пременной>:
+    #     <имя файловой пременной.write(weather_xml.content)
+
