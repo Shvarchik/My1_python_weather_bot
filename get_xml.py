@@ -1,7 +1,10 @@
 ﻿import requests
 
-def import_xml ():
-    file_url = 'https://xml.meteoservice.ru/export/gismeteo/point/32277.xml'
+def import_xml (arg):
+    if arg == 1:
+        file_url = 'https://xml.meteoservice.ru/export/gismeteo/point/37.xml'
+    elif arg == 2:
+        file_url = 'https://xml.meteoservice.ru/export/gismeteo/point/69.xml'
 
     weather_xml = requests.get(file_url)
     return weather_xml.content

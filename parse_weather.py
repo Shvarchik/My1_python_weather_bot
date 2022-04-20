@@ -1,11 +1,11 @@
 ﻿import xml.etree.ElementTree as et
 import get_xml as gx
 
-def parse_date_temp():
-    # tree = et.parse('moscow_weather.xml')  если из файла
+def parse_date_temp(arg):
+    # tree = et.parse('moscow_weather.xml')  #если из файла
     # root = tree.getroot()
 
-    root = et.fromstring(gx.import_xml())
+    root = et.fromstring(gx.import_xml(arg))
     list_time = []
     list_temperature=[]
     for report in root:
@@ -23,7 +23,3 @@ def parse_date_temp():
     for i in range (0,len(list_time)):
         date_temperature.append(f'{list_time[i]}{list_temperature[i]}\n')
     return ''.join(date_temperature)
-
-
-
-
