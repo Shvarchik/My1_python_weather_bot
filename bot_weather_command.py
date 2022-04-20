@@ -25,7 +25,6 @@ def weather_command(update: Update, context: CallbackContext):
     keyboard = [[InlineKeyboardButton("Москва", callback_data='Москва'), InlineKeyboardButton("Питер", callback_data='Питер')]]
     reply_markup = InlineKeyboardMarkup(keyboard, one_time_keyboard=True)
     update.message.reply_text('Пожалуйста, выбери город:', reply_markup=reply_markup)
-    
 
 def button(update: Update, context: CallbackContext):
     query = update.callback_query
@@ -35,7 +34,6 @@ def button(update: Update, context: CallbackContext):
         arg=1
     elif variant == "Питер":
         arg=2
-    
     query.edit_message_text(text=f"{variant}:\n температура воздуха:\n {parse_date_temp(arg)}")
 
     
