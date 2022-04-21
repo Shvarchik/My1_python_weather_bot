@@ -2,7 +2,7 @@
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackQueryHandler
 from bot_weather_command import *
 
-updater = Updater('5367247080:AAHqV5uM5zSKaMe1XaYOMTy1SV5kftG1ytE')
+updater = Updater('Token')
 
 updater.dispatcher.add_handler(CommandHandler('hi', hi_command))
 updater.dispatcher.add_handler(CommandHandler('time', time_command))
